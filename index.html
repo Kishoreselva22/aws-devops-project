@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A sample web app deployed with AWS and DevOps.">
+  <title>AWS DevOps Deployment</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; display: grid; place-items: center;
+      padding: 24px; font-family: Arial, sans-serif;
+      color: #172033; background: linear-gradient(135deg, #e8f1ff, #f7f9fc);
+    }
+    main {
+      width: min(720px, 100%); padding: 44px 32px; text-align: center;
+      background: white; border-radius: 18px;
+      box-shadow: 0 16px 48px rgba(25, 45, 80, .12);
+    }
+    .tag { display: inline-block; padding: 8px 13px; border-radius: 999px;
+      color: #075985; background: #e0f2fe; font-size: 13px; font-weight: bold; }
+    h1 { margin: 20px 0 12px; font-size: clamp(30px, 6vw, 48px); }
+    p { color: #536179; line-height: 1.7; }
+    .stack { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .stack span { padding: 9px 12px; border: 1px solid #dbe3ef; border-radius: 8px; font-size: 14px; }
+    footer { margin-top: 30px; color: #7b8798; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <main>
+    <span class="tag">SUCCESSFULLY DEPLOYED</span>
+    <h1>Hello from AWS Cloud!</h1>
+    <p>This sample website is containerized with Docker and deployed to an AWS EC2 instance through a GitHub Actions CI/CD workflow.</p>
+    <div class="stack">
+      <span>AWS EC2</span><span>Linux</span><span>Docker</span>
+      <span>GitHub Actions</span><span>Nginx</span>
+    </div>
+    <footer>End-to-End Cloud Deployment using AWS and DevOps</footer>
+  </main>
+</body>
+</html>
