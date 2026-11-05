@@ -1,50 +1,121 @@
-# AWS DevOps Deployment Project
+# End-to-End Cloud Deployment Using AWS and DevOps
 
 ## Project Overview
-This project demonstrates a Docker-based web application deployment workflow using GitHub, GitHub Actions, and Docker Hub.
+
+This project demonstrates a Docker-based application deployment workflow using DevOps tools and cloud computing concepts.
+
+The application is containerized using Docker, and GitHub Actions is used to automate Docker image building and pushing to Docker Hub. The published image is then pulled and deployed locally for testing.
+
+AWS EC2 was also used for hands-on Linux server and deployment practice during college placement training.
 
 ## Technologies Used
-- Linux (Ubuntu)
-- Git and GitHub
-- Docker
-- Nginx
-- GitHub Actions
-- Docker Hub
 
-## Project Workflow
-1. Created a simple web application using Nginx.
-2. Managed source code using Git and GitHub.
-3. Created a Dockerfile to containerize the application.
-4. Configured GitHub Actions to build and push Docker images to Docker Hub.
-5. Pulled the Docker image from Docker Hub.
-6. Ran the container locally and verified the website in a browser.
+- **Cloud Platform:** AWS EC2 (hands-on training)
+- **Operating System:** Ubuntu Linux
+- **Version Control:** Git, GitHub
+- **Containerization:** Docker
+- **Web Server:** Nginx
+- **CI/CD:** GitHub Actions
+- **Container Registry:** Docker Hub
 
-## Architecture
+## Project Architecture
 
-GitHub → GitHub Actions → Build Docker Image → Docker Hub → Pull Image → Run Docker Container
+GitHub Repository  
+↓  
+GitHub Actions  
+↓  
+Build Docker Image  
+↓  
+Push Image to Docker Hub  
+↓  
+Pull Docker Image  
+↓  
+Run Docker Container  
+↓  
+Access Web Application
 
-## Docker Hub
-Docker Image: `lobiya/aws-devops-web:latest`
+## Project Implementation
 
-## How to Run
+### 1. Source Code Management
+- Created and maintained the project repository using GitHub.
+- Used Git for version control and source code management.
 
-Pull the image:
+### 2. Docker Containerization
+- Created a Dockerfile for the Nginx web application.
+- Built a Docker image to package the application and its required environment.
+- Ran the application inside a Docker container.
+
+### 3. CI/CD Automation
+- Configured a GitHub Actions workflow.
+- Automated Docker image building whenever code is pushed to the main branch.
+- Configured Docker Hub authentication using GitHub repository secrets.
+- Automated pushing of Docker images to Docker Hub.
+
+### 4. Docker Hub Integration
+- Published the Docker image to Docker Hub.
+- Pulled the published image for deployment testing.
+
+### 5. Application Deployment and Testing
+- Ran the Docker container locally using the pulled image.
+- Mapped the container's port 80 to the local port 8081 for testing.
+- Verified that the Nginx web application was accessible through a web browser.
+
+### 6. AWS EC2 Hands-on Practice
+- Gained practical exposure to AWS EC2 during college placement training.
+- Practised Linux server access and application deployment concepts.
+
+## GitHub Actions Workflow
+
+The CI workflow performs the following tasks:
+
+1. Checks out the source code.
+2. Sets up Docker Buildx.
+3. Authenticates with Docker Hub.
+4. Builds the Docker image.
+5. Pushes the image to Docker Hub with `latest` and commit-based tags.
+
+## Docker Hub Image
+
+**Docker Hub Repository:**  
+https://hub.docker.com/r/lobiya/aws-devops-web
+
+**Image Name:**
+`lobiya/aws-devops-web:latest`
+
+## How to Run the Project
+
+### Step 1: Pull the Docker Image
 
 ```bash
 docker pull lobiya/aws-devops-web:latest
 ```
 
-Run the container:
+### Step 2: Run the Container
 
 ```bash
-docker run -d --name aws-devops-web -p 8080:80 lobiya/aws-devops-web:latest
+docker run -d --name aws-devops-web-container -p 8081:80 lobiya/aws-devops-web:latest
 ```
 
-Open in browser:
+### Step 3: Verify the Running Container
 
-`http://localhost:8080`
+```bash
+docker ps
+```
 
-## Project Outcome
-Successfully containerized an Nginx web application and verified it locally using a Docker image pulled from Docker Hub.
+### Step 4: Access the Application
 
-**Note:** Automated EC2 deployment is not currently configured in this workflow.
+Open the following URL in your browser:
+
+`http://localhost:8081`
+
+## GitHub Repository
+
+https://github.com/Kishoreselva22/aws-devops-project
+
+## Key Learning Outcomes
+
+- Practical experience with Linux and Docker.
+- Understanding Git and GitHub version control.
+- Hands-on experience with Docker image creation and container management.
+- Understanding CI/CD automation using GitHub Actions.
+- Experience
